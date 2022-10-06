@@ -6,6 +6,7 @@ body{
     background-color: #fedd20;
     display: flex;
     align-items: center;
+    justify-content:space-between;
     padding: 0 24px;
 }
 #navbar>img{
@@ -21,3 +22,15 @@ body{
     padding: 15px;
 }
 
+.menuitem a{
+    text-decoration:none;
+    color:#000000;
+}
+
+.menuitem a:hover{
+    color:#ffffff;
+}
+
+.menuitem a:active{
+    color:#ff0000;
+}
