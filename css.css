@@ -67,4 +67,37 @@ height:100vh;
 
 #form{
     background-color:#444444;
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form .isiform{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+.isiform input{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.isiform textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.isiform label{
+    color:#fff;
+    font-size: 16px;
+}
+
+.isiform button{
+    margin-top:10px;
 }
