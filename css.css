@@ -27,6 +27,11 @@ body{
 .menuitem {
     padding: 15px;
 }
+.menuitem a {
+    color: black;
+    text-decoration: none;
+}
+
 
 .menuitem a{
     text-decoration:none;
@@ -37,7 +42,7 @@ body{
     color:#ffffff;
 }
 
-.menuitem a:active{
+.menuite a:active{
     color:#ff0000;
 }
 
