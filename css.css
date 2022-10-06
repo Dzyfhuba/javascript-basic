@@ -7,6 +7,7 @@ body{
     display: flex;
     align-items: center;
     padding: 0 24px;
+    justify-content: space-evenly;
 }
 #navbar>img{
     height: 85%;
@@ -20,4 +21,11 @@ body{
 .menuitem {
     padding: 15px;
 }
+.menuitem a {
+    color: black;
+    text-decoration: none;
+}
 
+.menuitem a:hover {
+    color: white;
+}
