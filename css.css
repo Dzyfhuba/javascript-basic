@@ -3,16 +3,22 @@ body{
 }
 #navbar{
     height: 52px;
+    width: 100vw;
     background-color: #fedd20;
     display: flex;
     align-items: center;
-    padding: 0 24px;
-    justify-content: space-evenly;
+    justify-content:space-between;
+    padding: 0 30px;
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index:9999;
 }
 #navbar>img{
     height: 85%;
 }
 .menu{
+    padding: 40px;
     list-style: none;
     display:flex;
     margin:0px;
@@ -26,6 +32,77 @@ body{
     text-decoration: none;
 }
 
-.menuitem a:hover {
-    color: white;
+
+.menuitem a{
+    text-decoration:none;
+    color:#000000;
+}
+
+.menuitem a:hover{
+    color:#ffffff;
+}
+
+.menuite a:active{
+    color:#ff0000;
+}
+
+#welcome{
+    background-color:#eeeeee;
+    background-image:url(https://blogger.googleusercontent.com/img/a/AVvXsEgJxqrZycqetnQO66u9mjASuu9Zfrkg4t3O7WRiFcIlx1Anp0WB3BUSqJQC0mn7cg0vzTP-eSgIahAv4pvwqlQSHlFaRGrzeQ1stuw1kZASYIGpznrsrRnkJ0kQg_o1w5-zZIEeUijt4Yougx3DYskEnUXKMp29JP_h2wdUy72iYP9XRMP6HH92susN=s16000);
+    background-size: 100%;
+    background-position: center;
+    display: flex;
+    align-content: center;
+    width:100vw;    
+height:100vh;
+}
+
+#welcome .latar{
+    width: inherit;
+    height:inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.latar h1{
+    color: #fff;
+    text-shadow: 5px 3px black;
+}
+
+#form{
+    background-color:#444444;
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form .isiform{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+.isiform input{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.isiform textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.isiform label{
+    color:#fff;
+    font-size: 16px;
+}
+
+.isiform button{
+    margin-top:10px;
 }
