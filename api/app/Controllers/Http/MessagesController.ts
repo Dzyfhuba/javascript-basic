@@ -19,14 +19,23 @@ export default class MessagesController {
           .orderBy('updated_at', 'desc')
       }
 
-      return response.status(200).json(messages)
+      return response.ok(messages)
     } catch (error) {
       return response.internalServerError(error)
     }
   }
 
   public async create ({response}: HttpContextContract) {
-    return response.methodNotAllowed()
+    try {
+      const message = {
+        name: 'fill this',
+        message: 'fill this',
+      }
+
+      return response.ok(message)
+    } catch (error) {
+      return response.internalServerError()
+    }
   }
 
   public async store ({request, response}: HttpContextContract) {
@@ -38,7 +47,7 @@ export default class MessagesController {
         message,
       })
 
-      return response.status(201).json({
+      return response.ok({
         ...data.$attributes,
       })
     } catch (error) {
@@ -51,15 +60,40 @@ export default class MessagesController {
     try {
       const message = await Message.findOrFail(id)
 
-      return response.status(200).json(message)
+      return response.ok(message)
     } catch (error) {
       return response.internalServerError()
     }
   }
 
-  public async edit ({}: HttpContextContract) {}
+  public async edit ({request, response}: HttpContextContract) {
+    try {
+      const {id} = request.params()
+      const message = await Message.findOrFail(id)
+      return response.created(message)
+    } catch (error) {
+      return response.internalServerError(error)
+    }
+  }
 
-  public async update ({}: HttpContextContract) {}
+  public async update ({request, response}: HttpContextContract) {
+    try {
+      const {id} = request.params()
+      const message = await Message.updateOrCreate({id}, {...request.body()})
+      return response.created(message)
+    } catch (error) {
+      return response.internalServerError(error, true)
+    }
+  }
 
-  public async destroy ({}: HttpContextContract) {}
+  public async destroy ({request, response}: HttpContextContract) {
+    try {
+      const {id} = request.params()
+      const message = await Message.findOrFail(id)
+      await message.delete()
+      return response.created(message)
+    } catch (error) {
+      return response.internalServerError(error)
+    }
+  }
 }
