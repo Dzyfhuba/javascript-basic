@@ -6,7 +6,9 @@
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
     "start": "node server.js",
-    "lint": "eslint . --ext=.ts"
+    "lint": "eslint . --ext=.ts",
+    "migration:fresh": "node ace migration:fresh",
+    "db:seed": "node ace db:seed --files ./database/seeders/DatabaseSeeder.ts"
   },
   "eslintConfig": {
     "extends": [
