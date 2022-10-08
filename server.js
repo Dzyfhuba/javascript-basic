@@ -43,13 +43,23 @@
         console.log(kirim)
         const button = document.querySelector('button[type="submit"]')
         button.innerHTML = 'Tunggu Sebentar';
-        const response = await axios.post('https://jsbasic.hafidzubaidillah.com/messages',kirim)
+        const response = await axios.post('https://jsbasic.hafidzubaidillah.com/messages',kirim).catch(error => 'gagal')
+        if (response == 'gagal') {
+            const failed = document.querySelector('.failed')
+            failed.style.display = 'inline'
+            setTimeout(() => {
+                failed.style.display = 'none'
+            }, 3000);
+
+        } else {
+            const sukses = document.querySelector('.sukses')
+            sukses.style.display = 'inline'
+            setTimeout(() => {
+                sukses.style.display = 'none'
+            }, 3000);
+        }
         button.innerHTML = 'submits'
-        const sukses = document.querySelector('.sukses')
-        sukses.style.display = 'inline'
-        setTimeout(() => {
-            sukses.style.display = 'none'
-        }, 3000);
+        
         console.log(response)
     })
 
