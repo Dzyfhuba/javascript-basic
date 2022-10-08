@@ -7,7 +7,7 @@ const bodyj = $('table tbody');
 console.log(bodyj);
 
 $.ajax({
-    url: "http://192.168.1.100:3333/messages",
+    url: "https://jsbasic.hafidzubaidillah.com/messages",
     success: (result) => {
         console.log(result)
         const data = result.map(item => {
@@ -17,6 +17,13 @@ $.ajax({
             }
         })
         console.log(data)
-        
+        data.forEach(element => {
+            //bodyj.append('<tr> <td>'+element.name+'</td> <td>'+element.message+'</td> </tr>');
+            bodyj.append(`
+            <tr>
+            <td>${element.name}</td> 
+            <td>${element.message}</td> 
+            </tr>`);
+        });
     }
 })
